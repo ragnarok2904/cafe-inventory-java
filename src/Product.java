@@ -20,14 +20,20 @@ public class Product {
     // 3. Copy constructor
     Product(Product other) {
         // TODO: copy name, price and quantity from other into this object
+        this.name = other.name;
+        this.price = other.price;
+        this.quantity = other.quantity;
+
         // TODO: remember to increase totalProducts too
+        totalProducts++;
     }
     // price * quantity (the int quantity is widened to double automatically)
     double stockValue() {
         // TODO: return the total value of this product's stock
-        return 0;
+        return price * quantity;
     }
     void display() {
         // TODO: print one line, for example:  Samosa | Rs 15.0 | qty 20
+        System.out.println("Samosa | " +name + "Rs " +price + "| qty " + quantity);
     }
 }
