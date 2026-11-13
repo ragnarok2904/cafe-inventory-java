@@ -47,16 +47,31 @@ public class Main {
                         products[count] = new Product(name, price, quantity);
                         count++;
                     }
-
                     break;
                 case 2:
                     // TODO: if count is 0 print a message, otherwise loop from 0 to
                     //       count - 1 and call display() on each product
                     //       (print the number i + 1 before each one)
+                    if(count == 0)
+                        System.out.println("No Products Yet");
+                    else {
+                        for(int i = 0; i <= count - 1; i++){
+                            System.out.print((i + 1) + ". ");
+                            products[i].display();
+                        }
+                    }
                     break;
                 case 3:
                     // TODO: loop over the stored products, add up stockValue()
                     //       and print the total (message if count is 0)
+                    double totalStockValue = 0;
+                    if(count != 0){
+                        for(int i = 0; i < count; i++){
+                            totalStockValue += products[i].stockValue();
+                        }
+                        System.out.println("Total stock value is: " + totalStockValue);
+                    }
+                    else System.out.println("No Products In Inventory Yet.");
                     break;
                 case 4:
                     // TODO: calculate the average price as a double and print it

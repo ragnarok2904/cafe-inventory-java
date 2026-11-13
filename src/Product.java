@@ -34,6 +34,6 @@ public class Product {
     }
     void display() {
         // TODO: print one line, for example:  Samosa | Rs 15.0 | qty 20
-        System.out.println("Samosa | " +name + "Rs " +price + "| qty " + quantity);
+        System.out.println(name + " | " + "Rs " +price + " | qty " + quantity + ".");
     }
 }
