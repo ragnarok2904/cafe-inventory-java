@@ -76,6 +76,13 @@ public class Main {
                 case 4:
                     // TODO: calculate the average price as a double and print it
                     //       also print it rounded down using an explicit cast
+                    double totalPriceOfItems = 0;
+                    for(int i = 0; i < count; i++){
+                        totalPriceOfItems += products[i].price;
+                    }
+                    double average = totalPriceOfItems/count;
+                    System.out.println("Average price of items: " + average);
+                    System.out.println("Rounded down: " + (int)average);
                     break;
                 case 5:
                     System.out.print("Product number: ");
