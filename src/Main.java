@@ -93,15 +93,31 @@ public class Main {
                     // TODO: check num is between 1 and count and extra is above 0,
                     //       otherwise print an error; then add extra to the quantity
                     //       of products[num - 1]
+                    if(num > 0 && num <= count && extra > 0){
+                        products[num - 1].quantity += extra;
+                    }
+                    System.out.println("Invalid Product Number");
                     break;
                 case 6:
                     System.out.print("Product number: ");
                     int n = sc.nextInt();
                     sc.nextLine();
                     // TODO: check n is between 1 and count (and the array is not full)
+                    if(n < 1 || n > count){
+                        System.out.println("Invalid Entry");
+                    } else if(count == products.length){
+                        System.out.println("Storage Full");
+                    }
                     // TODO: create a copy of products[n - 1] with the copy constructor,
                     //       add " (copy)" to the copy's name, store it at
                     //       products[count] and increase count
+                    else {
+                        Product copy = new Product(products[n - 1]);
+                        copy.name = copy.name + " (copy)";
+                        products[count] = copy;
+                        count++;
+                    }
+
                     break;
                 case 0:
                     System.out.println("Goodbye!");
